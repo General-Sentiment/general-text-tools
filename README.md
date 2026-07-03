@@ -43,10 +43,10 @@ text-tools/
 ├── index.html          # import map (preact, htm via esm.sh) + mount point
 ├── styles.css          # dark theme
 └── src/
-    ├── main.js           # fonts, presets, render()
+    ├── main.js           # fonts, default text, render()
     ├── TypesetEditor.js  # main editor (state, layout, SVG canvas)
     ├── Toolbar.js        # tool selector + undo/redo
-    ├── Sidebar.js        # text input, presets, control panels
+    ├── Sidebar.js        # text input, control panels
     ├── controls.js       # schema-driven panel (Slider/Select/Checkbox) — the leva replacement
     ├── constants.js      # SVG page dimensions
     ├── perlin.js         # 2D perlin noise

@@ -13,7 +13,7 @@ function emptyPageToolState() {
   return { ripples: [], kernStrokes: [], ragPoints: [] };
 }
 
-export function TypesetEditor({ fonts, defaultFont, presets, fontFiles = {} }) {
+export function TypesetEditor({ fonts, defaultFont, defaultText = "", fontFiles = {} }) {
   const ready = useFontsReady(fonts);
 
   const [activeTool, setActiveTool] = useState("none");
@@ -74,7 +74,7 @@ export function TypesetEditor({ fonts, defaultFont, presets, fontFiles = {} }) {
   });
 
   // --- Content & per-page tool state ---
-  const [content, setContent] = useState(Object.values(presets)[0] ?? "");
+  const [content, setContent] = useState(defaultText);
   const [pagesToolState, setPagesToolState] = useState([emptyPageToolState()]);
 
   // Split content into pages
@@ -823,7 +823,6 @@ export function TypesetEditor({ fonts, defaultFont, presets, fontFiles = {} }) {
     <${Sidebar}
       content=${content}
       onContentChange=${setContentWithUndo}
-      presets=${presets}
       panels=${panels}
     />
   </div>`;

@@ -9,12 +9,27 @@ const FONTS = ["sans-serif", "Arial", "serif", "Times New Roman"];
 // e.g. "My Web Font": "./fonts/MyWebFont.woff2"
 const FONT_FILES = {};
 
-const PRESETS = {
-  Short: "Who is my greatest teacher?\n\nMyself 30 years from now.",
-  "Glass-Over": `What is the goal? To calm one’s system so profoundly that we can see into our depths. Not to settle for the visibility of our normal choppy waters, or even for the ripples that we can relax into after weeks in the cave…but for that magical glass-over that happens on the ocean from time to time, when winds still for long enough for the surface to release all tension, smooth out, the water becoming like a sheet of glass, and what once had been obscured by turbulence not only becomes visible but is amplified in its radical clarity…\n\nThe scales on fish 20 feet deep seem magnified\n\nThe visibility is so profound\nthat it almost feels distorted in its intensity\nIt is strangely difficult to read\nwhat is 2 feet deep and 5 feet deep and 25 feet deep\nbecause what was in the way is gone`,
-};
+const DEFAULT_TEXT = `If, as they say, poetry is a sign of something
+among people, then let this be prearranged now,
+between us, while we are still peoples: that
+at the end of time, which is also the end of poetry
+(and wheat and evil and insects and love),
+when the entire human race gathers in the flesh,
+reconstituted down to the infant’s tiniest fold
+and littlest nail, I will be standing at the edge
+of that fathomless crowd with an orange for you,
+reconstituted down to its innermost seed protected
+by white thread, in case you are thirsty, which
+does not at this time seem like such a wild guess,
+and though there will be no poetry between us then,
+at the end of time, the geese all gone with the seas,
+I hope you will take it, and remember on earth
+I did not know how to touch it it was all so raw,
+and if by chance there is no edge to the crowd
+or anything else so that I am of it,
+I will take the orange and toss it as high as I can.`;
 
 render(
-  html`<${TypesetEditor} fonts=${FONTS} defaultFont=${FONTS[0]} presets=${PRESETS} fontFiles=${FONT_FILES} />`,
+  html`<${TypesetEditor} fonts=${FONTS} defaultFont="Times New Roman" defaultText=${DEFAULT_TEXT} fontFiles=${FONT_FILES} />`,
   document.getElementById("app"),
 );
