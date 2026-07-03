@@ -612,6 +612,20 @@ export function TypesetEditor({ fonts, defaultFont, presets, fontFiles = {} }) {
       .catch((err) => alert(`Copy PNG failed: ${err.message}`));
   };
 
+  const downloadPng = async () => {
+    try {
+      const blob = await svgToPngBlob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "typeset.png";
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert(`Download PNG failed: ${err.message}`);
+    }
+  };
+
   const exportState = () => {
     navigator.clipboard.writeText(JSON.stringify({
       content, typography: settings, displacement,
@@ -706,6 +720,7 @@ export function TypesetEditor({ fonts, defaultFont, presets, fontFiles = {} }) {
       actions: [
         { label: "Copy SVG", onClick: copySvg },
         { label: "Copy PNG", onClick: copyPng },
+        { label: "Download PNG", onClick: downloadPng },
         { label: "Export State", onClick: exportState },
         { label: "Import State", onClick: importState },
       ],

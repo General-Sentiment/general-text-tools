@@ -2,11 +2,11 @@ import { render } from "preact";
 import { html } from "htm/preact";
 import { TypesetEditor } from "./TypesetEditor.js";
 
-const FONTS = ["Arial", "system-ui", "Georgia", "serif"];
+const FONTS = ["sans-serif", "Arial", "serif", "Times New Roman"];
 
 // Self-hosted font files, embedded into the SVG when rasterizing to PNG —
 // SVG-in-<img> can't see document web fonts. System fonts need no entry.
-// e.g. "ABC Gramercy Variable Unlicensed Trial": "./fonts/ABCGramercyVariable-Trial.woff2"
+// e.g. "My Web Font": "./fonts/MyWebFont.woff2"
 const FONT_FILES = {};
 
 const PRESETS = {

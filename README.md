@@ -2,7 +2,7 @@
 
 A standalone, no-build port of the sandbox `pretext-demo` — a concrete poetry typesetting tool rendered to SVG.
 
-Place text on a page and shape it with spatial tools — ripple displacement, kern brushes, custom rag edges, and perlin noise fields. Export clean SVG for use in Figma or print workflows.
+Place text on a page and shape it with spatial tools — ripple displacement, kern brushes, custom rag edges, and perlin noise fields. Export clean SVG for use in Figma or print workflows, or download a PNG.
 
 Built with [Preact](https://preactjs.com) + [htm](https://github.com/developit/htm) loaded from esm.sh via an import map. No bundler, no build step, no `node_modules`.
 
@@ -41,8 +41,7 @@ Separate pages in the text input with a line containing `----`. Each page keeps 
 ```
 text-tools/
 ├── index.html          # import map (preact, htm via esm.sh) + mount point
-├── styles.css          # dark theme + @font-face for the Gramercy trials
-├── fonts/              # ABC Gramercy Variable / Fine Variable trial woff2s
+├── styles.css          # dark theme
 └── src/
     ├── main.js           # fonts, presets, render()
     ├── TypesetEditor.js  # main editor (state, layout, SVG canvas)
@@ -61,4 +60,4 @@ text-tools/
 - leva is replaced by a small schema-driven control panel (`controls.js`).
 - Tailwind is replaced by plain CSS (`styles.css`).
 - `@chenglou/pretext` is dropped entirely — the original loaded it but only used canvas `measureText`, which is kept. Readiness now comes from preloading the fonts via `document.fonts.load`.
-- Fonts are self-hosted via `@font-face` instead of `next/font`.
+- System fonts only (sans, Arial, serif, Times) — no self-hosted font files.
